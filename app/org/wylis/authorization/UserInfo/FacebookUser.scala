@@ -1,6 +1,6 @@
-package authorization.UserInfo
+package org.wylis.authorization.UserInfo
 
-import authorization.UserInfo.FacebookStatus.Status
+import FacebookStatus.Status
 
 object FacebookStatus {
   type Status = String

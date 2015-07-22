@@ -1,10 +1,10 @@
-package authorization
+package org.wylis.authorization
 
+import UserInfo.UserInfo
+import play.api.mvc.Security._
 import play.api.mvc._
-import play.api.mvc.Security.Authenticated
-import authorization.UserInfo.UserInfo
 
-trait OAuth[A <: UserInfo] {
+trait OAuth2[A <: UserInfo] {
   def userInfo(request: RequestHeader): Option[A]
 
   def onUnauthorized(request: RequestHeader): Result
