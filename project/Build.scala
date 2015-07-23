@@ -20,8 +20,11 @@ object BuildSettings {
 
     resolvers += "Typesafe Repo" at "http://repo.typesafe.com/typesafe/releases/",
     scalacOptions ++= Seq("-unchecked", "-deprecation", "-feature"),
+    credentialsSettings,
     publishSetting
   )
+
+  lazy val credentialsSettings = credentials += Credentials(Path.userHome / ".ivy2" / ".credentials")
 
   lazy val publishSetting = publishTo <<= version.apply{
     v =>
