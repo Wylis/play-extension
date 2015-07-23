@@ -25,7 +25,7 @@ object BuildSettings {
 
   lazy val publishSetting = publishTo <<= version.apply{
     v =>
-      val nexus = "http://wylis.org:8081/nexus"
+      val nexus = "http://wylis.org:8081/nexus/"
       if (v.trim.endsWith("SNAPSHOT"))
         Some("snapshots" at nexus + "content/repositories/snapshots")
       else
